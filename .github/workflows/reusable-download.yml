@@ -1,0 +1,11 @@
+name: download artifact (reusable workflow)
+on:
+  workflow_call:
+jobs:
+  download:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: artifact
+      - run: cat data.md
