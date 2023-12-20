@@ -1,0 +1,10 @@
+name: Problem example
+on:
+  workflow_dispatch:
+
+jobs:
+  create-artifact:
+    uses: ./.github/workflows/reusable-upload.yml
+  download-artifact:
+    needs: create-artifact
+    uses: ./.github/workflows/reusable-download.yml
